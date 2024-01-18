@@ -1,0 +1,28 @@
+Automated Emails
+This application automates the process of sending personalized news feeds to users based on their interests. 
+It reads user data from an Excel file and retrieves relevant news articles using the News API.
+
+Objects
+ExcelFile
+  filepath: The path to the Excel file containing user data.
+  get_data(): Retrieves user data from the Excel file.
+Email
+  sender: The email address of the sender.
+  receiver: The email address of the recipient.
+  subject: The subject line of the email.
+  body: The body content of the email.
+  send(): Sends the email.
+NewsFeed
+  interest: The user's interest for which news articles are retrieved.
+  data: The list of retrieved news articles.
+  get(): Generates the email body containing the news articles.
+  
+Code Explanation
+  The send_email() function retrieves user data from the Excel file, creates a NewsFeed object for each user, 
+  and composes an email with the user's name, interest, and news feed. The email is then sent using the Yagmail library.
+  
+  The while loop runs continuously, checking the current time every 60 seconds (1 minute). If it's 10:30 AM, 
+  the send_email() function is called to send news feeds to all users.
+  
+  The NewsFeed class uses the News API to retrieve news articles related to the user's interest. 
+  It constructs the API URL, retrieves the JSON response, extracts the article titles and URLs, and formats them into a single string for the email body.
