@@ -1,0 +1,2 @@
+Title: Weather App
+Description: An app that lets the user search for the weather conditions for the next week based on the given location (city).
