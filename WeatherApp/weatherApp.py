@@ -30,7 +30,7 @@ def get_default():
 
     # Create weather forecast apr with api key from home.openweathermap.org
     api = ("https://api.openweathermap.org/data/3.0/onecall?lat=" + str(location.latitude) +
-           "&lon=" + str(location.longitude) + "&units=metric&exclude=hourly&appid=30e73567a6988acdea1ef26dd0b42c4c")
+           "&lon=" + str(location.longitude) + "&units=metric&exclude=hourly&appid={addownkey}")
 
     json_data = requests.get(api).json()
 
